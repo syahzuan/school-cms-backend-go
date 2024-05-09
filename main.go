@@ -40,7 +40,10 @@ func corsMiddleware(next http.Handler) http.Handler {
 
 func main() {
 
-	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI("mongodb+srv://admin:pcqfugdm1cms@cluster0.kzftowi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"))
+	//mongdb connection url here
+	DBCONN := ""
+
+	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI(DBCONN))
 	if err != nil {
 		panic(err)
 	}
@@ -160,5 +163,5 @@ func main() {
 	http.Handle("PUT /api/announcements/", corsMiddleware(updateHandler))
 	http.Handle("DELETE /api/announcements/", corsMiddleware(deleteHandler))
 
-	log.Fatal(http.ListenAndServe(":3001", nil))
+	log.Fatal(http.ListenAndServe(":3000", nil))
 }
