@@ -1,6 +1,6 @@
 module github.com/syahzuan/school-cms-backend-go
 
-go 1.22.2
+go 1.22
 
 require go.mongodb.org/mongo-driver v1.15.0
 
