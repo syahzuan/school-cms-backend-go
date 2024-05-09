@@ -160,5 +160,5 @@ func main() {
 	http.Handle("PUT /api/announcements/", corsMiddleware(updateHandler))
 	http.Handle("DELETE /api/announcements/", corsMiddleware(deleteHandler))
 
-	log.Fatal(http.ListenAndServe(":3000", nil))
+	log.Fatal(http.ListenAndServe(":3001", nil))
 }
